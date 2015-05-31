@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Slacker News</title>
+
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+
+  <body>
+
+    <div class="nav">
+      <ul id="nav_menu">
+        <li id="icon"><img src="launch_combinator_white_border.png"></li>
+        <li><a href="/index"><strong>Slacker News</strong><li>
+        <li><a href="/newest">new |</a></li>
+        <li><a href="https://news.ycombinator.com/newcomments">comments |</a></li>
+        <li><a href="http://www.boston-theater.com/">show |</a></li>
+        <li><a href="https://horizon.launchacademy.com/questions/new">ask |</a></li>
+        <li><a href="https://news.ycombinator.com/jobs">jobs |</a></li>
+        <li><a href="/articles">submit</a></li>
+        <li id="login"><a href="https://news.ycombinator.com/login?goto=news">login </a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <ul id="articles">
+        <p>
+        <% news.each_with_index do | item, index | %>
+        <% index1 = index + 1 %>
+        <li><div id="art_color"> <%= index1 %>.</div><div id="arrow"><img src="grayarrow.gif"></div> <%= item[0] %> <span id="link"> <a href="<%= item[2] %>">(<%= item[1] %>) </a> </span>
+        <span id="art_info"> <%= item[3] %> points by <%= item[4] %> <%= item[5] %> | <%= item[6] %> comments</span></li>
+        <% end %>
+
+        <li id="more"><a href="https://news.ycombinator.com/">More</li>
+
+      </ul>
+
+      <hr>
+
+      <footer>
+        <ul>
+          <li>Guidelines | </li>
+          <li>FAQ | </li>
+          <li>Support | </li>
+          <li>API | </li>
+          <li>Security | </li>
+          <li>Lists | </li>
+          <li>Bookmarklet | </li>
+          <li>DMCA | </li>
+          <li><a href="https://www.launchacademy.com/sign_in">Apply to LA| </a></li>
+          <li> Contact| </li>
+        </ul>
+
+        <form>
+          <form action="/index" >
+          <label for="search">Search:</label>
+          <input type="text" id="search" name="search" required>
+        </form>
+
+    </div>
+
+  </body>
+</html>
